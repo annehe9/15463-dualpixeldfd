@@ -12,7 +12,7 @@ from cv2.ximgproc import guidedFilter
 
 # based on https://github.com/poolio/bilateral_solver
 
-fullpath = "../data/results/Llama_p_111_k_41_s_33_b_25_r_1.0"
+fullpath = "../data/results/Cow_p_111_k_41_s_33_b_25_r_0.3"
 info = np.load(fullpath+"/optresults.npz")
 target = info['depth']
 confidence = info['confidence']

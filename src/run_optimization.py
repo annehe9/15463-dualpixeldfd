@@ -18,8 +18,8 @@ from optimization import solve_translating_disk_kernel
 from skimage import img_as_ubyte
 
 save_path = "../data/results/"
-imgname = '0002' # should have imgname_B.png, imgname_L.png, and imgname_R.png
-resize_val = 0.3 # if img too large                
+imgname = 'Cup' # should have imgname_B.png, imgname_L.png, and imgname_R.png
+resize_val = 0.5 # if img too large                
 patchsize = 111 # odd
 maxksize = 41 # odd          
 stride = 33 # odd
@@ -59,7 +59,7 @@ def run_translating_disk_kernel(patchsize, maxksize, limg, rimg, cimg, border, s
 			rpatch = rimg[i-m:i+m,j-m:j+m]
 			cpatch = cimg[i-m:i+m,j-m:j+m]
 
-			sobel_val = ndimage.sobel(cpatch)
+			sobel_val = ndimage.sobel(cpatch, 1)
 			sobel_val = sobel_val[2:sobel_val.shape[0]-2, 2:sobel_val.shape[1]-2]
 			sobel_val = np.mean(np.abs(sobel_val))
 
